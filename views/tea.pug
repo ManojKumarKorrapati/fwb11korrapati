@@ -26,15 +26,20 @@ block content
             "size": "small"
         },
         {
-                        "Brand": "Costa",
-                        "price": 15,
-                        "size": "large"
-                    },                   
-                ]
+            "Brand": "Costa",
+            "price": 15,
+            "size": "large"
+        },                   
+     ]
   div(class="container-fluid")
             each v,index in tea 
              div(class ="row")
-                div(class="col-sm-2", style="background-color: rgb(147, 226, 147);" ) #{v.Brand}
-                div(class="col-sm-2", style="background-color: yellowgreen;" ) #{v.price}
-                div(class="col-sm-2", style="background-color: green;" ) #{v.size}
-                
+                div(class="col-sm-2", style="background-color: rgb(147, 226, 147);", onclick=`buy(${index})` ) #{v.Brand}
+                div(class="col-sm-2", style="background-color: yellowgreen;", onclick=`buy(${index})` ) #{v.price}
+                div(class="col-sm-2", style="background-color: green;", onclick=`buy(${index})` ) #{v.size}
+   
+  script.                
+        function buy(intem)
+        {
+              alert(`you purchased Item ${intem+1}`)
+        } 
